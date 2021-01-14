@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on TMS Media</title>
-    <link>https://inideku.github.io/tags/php/</link>
+    <link>https://inidekuid.github.io/tags/php/</link>
     <description>Recent content in php on TMS Media</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 13:13:48 +0700</lastBuildDate><atom:link href="https://inideku.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 13:13:48 +0700</lastBuildDate><atom:link href="https://inidekuid.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Php Pdo Koneksi Database Ke Mysql</title>
-      <link>https://inideku.github.io/php-pdo-koneksi-database-ke-mysql/</link>
+      <link>https://inidekuid.github.io/php-pdo-koneksi-database-ke-mysql/</link>
       <pubDate>Mon, 11 Jan 2021 13:13:48 +0700</pubDate>
       
-      <guid>https://inideku.github.io/php-pdo-koneksi-database-ke-mysql/</guid>
+      <guid>https://inidekuid.github.io/php-pdo-koneksi-database-ke-mysql/</guid>
       <description>halooo, disini saya akan berbagi bagaimana membuat koneksi dari php ke mysql menggunakan PHP PDO, caranya sebagai berikut</description>
     </item>
     
