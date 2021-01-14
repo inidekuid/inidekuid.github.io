@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://localhost:1313/categories/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/tags/pdomysql/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/categories/php/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/tags/php/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/php-pdo-koneksi-database-ke-mysql/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/post/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/tags/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://localhost:1313/</loc>
+    <lastmod>2021-01-11T13:13:48+07:00</lastmod>
+  </url>
+  
+</urlset>
