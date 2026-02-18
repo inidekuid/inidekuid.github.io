@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Hello World",
+        "slug": "hello-world",
+        "date": "2026-02-18",
+        "category": "Catatan",
+        "tags": [
+            "intro",
+            "blog",
+            "markdown"
+        ],
+        "excerpt": "Artikel pembuka blog pribadi saya.",
+        "file": "hello-world.md"
+    },
+    {
+        "title": "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED",
+        "slug": "warning-remote-host-identification-has-changed",
+        "date": "2026-02-18",
+        "category": "Catatan",
+        "tags": [
+            "SSH",
+            "security",
+            "network"
+        ],
+        "excerpt": "Artikel pembuka blog pribadi saya.",
+        "file": "warning-remote-host-identification-has-changed.md"
+    }
+]

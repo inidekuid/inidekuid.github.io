@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Blog Pribadi</title>
+  <link>https://username.github.io/blog-pribadi/</link>
+  <description>Catatan dan pembelajaran</description>
+
+  <item>
+    <title>Hello World</title>
+    <link>https://username.github.io/blog-pribadi/post.html?slug=hello-world</link>
+    <pubDate>Tue, 18 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Artikel pertama blog pribadi</description>
+  </item>
+
+</channel>
+</rss>
