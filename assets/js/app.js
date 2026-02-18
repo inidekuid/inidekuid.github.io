@@ -3,14 +3,13 @@ const params = new URLSearchParams(window.location.search);
 const slug = params.get('slug');
 
 // halaman index
-// halaman index
 if (document.getElementById('posts')) {
   let allPosts = [];
 
   fetch('posts/posts.json')
     .then(res => res.json())
     .then(posts => {
-      // SORT TERBARU
+      // SORTING
       allPosts = posts.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
       );
@@ -33,24 +32,26 @@ if (document.getElementById('posts')) {
 
     posts.forEach(p => {
       list.innerHTML += `
-        <article class="post-item">
-          <h2>
-            <a href="post.html?slug=${p.slug}">
-              ${p.title}
-            </a>
-          </h2>
+      <article class="border-b pb-6">
+        <h2 class="text-xl font-semibold">
+          <a href="post.html?slug=${p.slug}"
+             class="hover:underline">
+            ${p.title}
+          </a>
+        </h2>
 
-          <div class="post-meta">
-            ${p.date} · ${p.category}
-          </div>
+        <div class="text-sm text-gray-500 mt-1">
+          ${p.date} · ${p.category}
+        </div>
 
-          <p class="post-excerpt">
-            ${p.excerpt ?? 'Klik untuk membaca selengkapnya…'}
-          </p>
-        </article>
-      `;
+        <p class="mt-3 text-gray-700">
+          ${p.excerpt ?? 'Klik untuk membaca selengkapnya…'}
+        </p>
+      </article>
+    `;
     });
   }
+
 }
 
 
@@ -64,7 +65,7 @@ if (slug) {
       currentPost = posts.find(p => p.slug === slug);
 
       if (!currentPost) {
-        throw new Error('Post tidak ditemukan');
+        throw new Error('Artikel tidak ditemukan');
       }
 
       return fetch('posts/' + currentPost.file);
@@ -74,14 +75,30 @@ if (slug) {
       const meta = document.getElementById('meta');
 
       meta.innerHTML = `
-        <p>
-          <strong>Kategori:</strong> ${currentPost.category}<br>
-          <strong>Tag:</strong>
-          ${currentPost.tags
-          .map(t => `<span class="tag">${t}</span>`)
-          .join(' ')}
-        </p>
-      `;
+        <div class="flex flex-col gap-3">
+
+      <!-- Kategori -->
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-gray-500">Kategori:</span>
+        <span class="bg-blue-100 text-blue-700
+                     px-2 py-0.5 rounded text-xs">
+          ${currentPost.category}
+        </span>
+      </div>
+
+      <!-- Tag -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-sm text-gray-500">Tag:</span>
+        ${currentPost.tags.map(t => `
+          <span class="bg-gray-200 text-gray-700
+                       px-2 py-0.5 rounded text-xs">
+            ${t}
+          </span>
+        `).join('')}
+      </div>
+
+    </div>
+  `;
 
       document.getElementById('content').innerHTML =
         marked.parse(md);

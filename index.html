@@ -5,27 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog Pakto</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="alternate" type="application/rss+xml" href="rss.xml">
 
 </head>
 
-<body>
-  <header class="site-header">
-    <h1>📘 Blog Pribadi Pakto</h1>
-    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
-  </header>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <input type="search" id="search" placeholder="Cari artikel..." class="search">
+  <div class="max-w-3xl mx-auto px-4 py-8">
 
-  <main id="posts" class="post-list"></main>
+    <!-- Header -->
+    <header class="mb-10">
+      <h1 class="text-2xl md:text-3xl font-bold">Blog Pakto</h1>
+      <p class="text-gray-600 mt-1 text-sm md:text-base">
+        Catatan, pembelajaran, dan eksperimen
+      </p>
+    </header>
 
-  <footer class="site-footer">
-    <small>© 2026 Blog Pribadi Pakto</small>
-  </footer>
+    <!-- Search -->
+    <input id="search" type="search" placeholder="Cari artikel..."
+      class="w-full mb-8 px-4 py-2 border rounded-lg focus:outline-none focus:ring">
+
+    <!-- List -->
+    <main id="posts" class="space-y-8"></main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-sm text-gray-500 text-center">
+      © 2026 Blog Pakto. All rights reserved.
+    </footer>
+
+  </div>
 
   <script src="assets/js/app.js"></script>
 </body>
-
 
 </html>
