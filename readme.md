@@ -60,39 +60,33 @@ Atau editor favorit Anda.
 ### Publish
 
 ```bash
-git add .
-git commit -m "Post: Judul Artikel"
-git push
+## Preview di Lokal
+
+Gunakan server lokal:
+
+```bash
+python3 -m http.server 8000
 ```
 
-Selesai 🚀
+Buka di browser:
 
-
-
-## Format Dasar Markdown
-
-### Judul
-
-```md
-# Judul Artikel
+```bash
+http://localhost:8000
 ```
 
-### Sub Judul
+Jangan buka via `file://`.
 
-```md
-## Sub Judul
-```
 
-## Format Kode (PENTING)
+## ❌ Kesalahan Umum (Hindari)
 
-### Inline Code
+* Mengedit `posts.json` sembarangan
+* Lupa `git add`
+* Salah format tanggal
+* Menulis kode tanpa triple backtick
+* Preview tanpa server lokal
 
-Untuk perintah, fungsi, atau nama file:
 
-```md
-Gunakan `git push` untuk upload.
-```
-
+## Checklist Sebelum Publish
 
 
 ### Code Block (Multi Baris)
@@ -111,7 +105,6 @@ echo "Hello World";
 ```
 
 Bahasa yang umum:
-```bash
 - `php`
 - `js`
 - `html`
@@ -119,7 +112,6 @@ Bahasa yang umum:
 - `bash`
 - `json`
 - `sql`
-```
 
 
 ## Aturan Penulisan yang Disarankan
