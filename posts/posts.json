@@ -14,6 +14,19 @@
         "content_hash": "368080667857f20c23e34715a22dfb909fde1d0a"
     },
     {
+        "title": "Instalasi PHP untuk Nginx di Debian",
+        "slug": "instalasi-php-untuk-nginx-di-debian",
+        "date": "2026-02-19",
+        "file": "instalasi-php-untuk-nginx-di-debian.md",
+        "tags": [
+            "debian",
+            "web server"
+        ],
+        "category": "catatan",
+        "excerpt": "Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal phpfpm (FastCGI Process Manager) agar Nginx dapat m\u2026",
+        "content_hash": "530f5c85c48e511104e69201836afe5c875dd7bf"
+    },
+    {
         "title": "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED",
         "slug": "warning-remote-host-identification-has-changed",
         "date": "2026-02-18",
