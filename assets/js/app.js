@@ -6,6 +6,7 @@ const CACHE_BUSTER = '?v=' + Date.now();
 // halaman index
 if (document.getElementById('posts')) {
   let allPosts = [];
+  let currentTag = null;
 
   fetch('posts/posts.json' + CACHE_BUSTER)
     .then(res => res.json())
@@ -14,10 +15,14 @@ if (document.getElementById('posts')) {
       allPosts = posts.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
       );
+      buildTagFilter(allPosts);
       renderPosts(allPosts);
     });
 
-  document.getElementById('search').addEventListener('input', e => {
+  document.getElementById('search').addEventListener('input', applyFilters);
+
+  // fungsi untuk melakukan pencarian
+  /* document.getElementById('search').addEventListener('input', (e) => {
     const q = e.target.value.toLowerCase();
     const filtered = allPosts.filter(p =>
       p.title.toLowerCase().includes(q) ||
@@ -25,7 +30,7 @@ if (document.getElementById('posts')) {
       p.tags.join(' ').toLowerCase().includes(q)
     );
     renderPosts(filtered);
-  });
+  }); */
 
   function renderPosts(posts) {
     const list = document.getElementById('posts');
@@ -109,4 +114,77 @@ if (slug) {
         '<p>Artikel tidak ditemukan.</p>';
       console.error(err);
     });
+}
+// fungsi Tag Filter
+function buildTagFilter(posts) {
+  const container = document.getElementById('tag-filter');
+  if (!container) return;
+
+  const tags = new Set();
+
+  posts.forEach(p => {
+    (p.tags || []).forEach(t => tags.add(t));
+  });
+
+  let html = `
+    <button
+      class="tag-btn bg-blue-600 text-white"
+      data-tag="">
+      Semua
+    </button>
+  `;
+
+  [...tags].sort().forEach(tag => {
+    html += `
+      <button
+        class="tag-btn bg-gray-200 text-gray-700"
+        data-tag="${tag}">
+        ${tag}
+      </button>
+    `;
+  });
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('.tag-btn')
+    .forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentTag = btn.dataset.tag || null;
+        updateActiveTag(btn);
+        applyFilters();
+      });
+    });
+}
+// fungsi untuk mengupdate tampilan tag yang aktif
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+
+  let filtered = allPosts;
+
+  if (currentTag) {
+    filtered = filtered.filter(p =>
+      (p.tags || []).includes(currentTag)
+    );
+  }
+
+  if (q) {
+    filtered = filtered.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      (p.tags || []).join(' ').toLowerCase().includes(q)
+    );
+  }
+
+  renderPosts(filtered);
+}
+// fungsi untuk tampilan tag yang aktif
+function updateActiveTag(activeBtn) {
+  document.querySelectorAll('.tag-btn')
+    .forEach(btn => {
+      btn.classList.remove('bg-blue-600', 'text-white');
+      btn.classList.add('bg-gray-200', 'text-gray-700');
+    });
+
+  activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+  activeBtn.classList.add('bg-blue-600', 'text-white');
 }

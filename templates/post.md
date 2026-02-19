@@ -1,10 +1,20 @@
+<!--
+tags:
+category:
+-->
+
 # {{title}}
 
-_Tanggal: {{date}}_  
-_Kategori: {{category}}_  
-_Tag: {{tags}}_
+Paragraf pembuka artikel ditulis di sini.
+Paragraf ini akan otomatis digunakan sebagai **excerpt**
+di halaman depan blog.
 
----
+## Pendahuluan
 
-Tulis konten di sini...
+Tulis isi artikel Anda di sini.
 
+
+## Contoh Kode
+
+```php
+echo "Hello World";
