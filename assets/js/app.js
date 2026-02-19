@@ -1,12 +1,13 @@
 
 const params = new URLSearchParams(window.location.search);
 const slug = params.get('slug');
+const CACHE_BUSTER = '?v=' + Date.now();
 
 // halaman index
 if (document.getElementById('posts')) {
   let allPosts = [];
 
-  fetch('posts/posts.json')
+  fetch('posts/posts.json' + CACHE_BUSTER)
     .then(res => res.json())
     .then(posts => {
       // SORTING
@@ -59,7 +60,7 @@ if (document.getElementById('posts')) {
 if (slug) {
   let currentPost = null;
 
-  fetch('posts/posts.json')
+  fetch('posts/posts.json' + CACHE_BUSTER)
     .then(r => r.json())
     .then(posts => {
       currentPost = posts.find(p => p.slug === slug);
@@ -68,7 +69,7 @@ if (slug) {
         throw new Error('Artikel tidak ditemukan');
       }
 
-      return fetch('posts/' + currentPost.file);
+      return fetch('posts/' + currentPost.file + CACHE_BUSTER);
     })
     .then(r => r.text())
     .then(md => {

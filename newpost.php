@@ -25,7 +25,7 @@ if (file_exists($postFile)) {
 /* ---------- buat markdown ---------- */
 $tpl = file_get_contents($template);
 $md  = str_replace(
-    ['{{title}}', '{{date}}', '{{category}}', '{{tags}}'],
+    ['{{title}}', '{{date}}'],
     [$title, $date, $category, implode(', ', $tags)],
     $tpl
 );
@@ -40,6 +40,7 @@ $posts[] = [
     'slug'     => $slug,
     'date'     => $date,
     'category' => $category,
+    'excerpt'  => '',
     'tags'     => $tags,
     'file'     => "$slug.md"
 ];

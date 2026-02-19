@@ -1,28 +1,40 @@
 [
     {
+        "title": "Instalasi Nginx di Debian xx",
+        "slug": "instalasi-nginx-di-debian-xx",
+        "date": "2026-02-19",
+        "category": "Catatan",
+        "excerpt": "Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah ",
+        "tags": [],
+        "file": "instalasi-nginx-di-debian-xx.md",
+        "content_hash": "368080667857f20c23e34715a22dfb909fde1d0a"
+    },
+    {
         "title": "Hello World",
         "slug": "hello-world",
         "date": "2026-02-18",
         "category": "Catatan",
+        "excerpt": "Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t\u2026",
         "tags": [
             "intro",
             "blog",
             "markdown"
         ],
-        "excerpt": "Artikel pembuka blog pribadi saya.",
-        "file": "hello-world.md"
+        "file": "hello-world.md",
+        "content_hash": "b4921d9e06458696cbce7956c34d1e36d04a9f5b"
     },
     {
         "title": "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED",
         "slug": "warning-remote-host-identification-has-changed",
         "date": "2026-02-18",
         "category": "Catatan",
+        "excerpt": "Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatkan pesan error ",
         "tags": [
             "SSH",
             "security",
             "network"
         ],
-        "excerpt": "Artikel pembuka blog pribadi saya.",
-        "file": "warning-remote-host-identification-has-changed.md"
+        "file": "warning-remote-host-identification-has-changed.md",
+        "content_hash": "ab4761a5c37c0d5815f7c7687348995bd651ccf0"
     }
 ]
