@@ -5,23 +5,13 @@
         "date": "2026-02-19",
         "category": "Catatan",
         "excerpt": "Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah ",
-        "tags": [],
+        "tags": [
+            "web server",
+            "nginx",
+            "debian"
+        ],
         "file": "instalasi-nginx-di-debian-xx.md",
         "content_hash": "368080667857f20c23e34715a22dfb909fde1d0a"
-    },
-    {
-        "title": "Hello Semuanya",
-        "slug": "hello-world",
-        "date": "2026-02-17",
-        "category": "Catatan",
-        "excerpt": "Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t\u2026",
-        "tags": [
-            "intro",
-            "blog",
-            "markdown"
-        ],
-        "file": "hello-world.md",
-        "content_hash": "b4921d9e06458696cbce7956c34d1e36d04a9f5b"
     },
     {
         "title": "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED",
@@ -36,5 +26,19 @@
         ],
         "file": "warning-remote-host-identification-has-changed.md",
         "content_hash": "ab4761a5c37c0d5815f7c7687348995bd651ccf0"
+    },
+    {
+        "title": "Hello Semuanya",
+        "slug": "hello-world",
+        "date": "2026-02-17",
+        "category": "Catatan",
+        "excerpt": "Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t\u2026",
+        "tags": [
+            "intro",
+            "blog",
+            "markdown"
+        ],
+        "file": "hello-world.md",
+        "content_hash": "b4921d9e06458696cbce7956c34d1e36d04a9f5b"
     }
 ]
