@@ -1,10 +1,22 @@
 [
     {
+        "title": "Clear OPCACHE",
+        "slug": "clear-opcache",
+        "date": "2026-02-23",
+        "file": "clear-opcache.md",
+        "tags": [
+            "php"
+        ],
+        "category": "Catatan, Networking",
+        "excerpt": "Pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena Pernah tidak kita sudah melakukan updat...",
+        "content_hash": "53790b3f1d6b6af57b46728e96bcf6a0ce3d7ba5"
+    },
+    {
         "title": "Instalasi Nginx di Debian xx",
         "slug": "instalasi-nginx-di-debian-xx",
         "date": "2026-02-19",
         "category": "Catatan",
-        "excerpt": "Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah ",
+        "excerpt": "Tanggal: 20260219 Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah sudo apt update && sudo apt install n...",
         "tags": [
             "web server",
             "nginx",
@@ -23,7 +35,7 @@
             "web server"
         ],
         "category": "catatan",
-        "excerpt": "Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal phpfpm (FastCGI Process Manager) agar Nginx dapat m\u2026",
+        "excerpt": "Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal phpfpm (FastCGI Process Manager) agar Nginx dapat m...",
         "content_hash": "530f5c85c48e511104e69201836afe5c875dd7bf"
     },
     {
@@ -31,7 +43,7 @@
         "slug": "warning-remote-host-identification-has-changed",
         "date": "2026-02-18",
         "category": "Catatan",
-        "excerpt": "Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatkan pesan error ",
+        "excerpt": "Tanggal: 20260218 Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatka...",
         "tags": [
             "SSH",
             "security",
@@ -45,7 +57,7 @@
         "slug": "hello-world",
         "date": "2026-02-17",
         "category": "Catatan",
-        "excerpt": "Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t\u2026",
+        "excerpt": "Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t...",
         "tags": [
             "intro",
             "blog",

@@ -1,190 +1,94 @@
-# Blog Pribadi (HTML + JS + Markdown + Git)
+# Blog Pribadi (SSG Sederhana dengan PHP)
 
-Blog statis sederhana untuk menulis artikel **di lokal**, menggunakan **Markdown**, dan **publish cukup dengan Git**.  
-Tanpa backend, tanpa framework berat, cocok untuk dokumentasi pribadi & blog teknis.
-
----
-
-## Tujuan Sistem
-- Menulis artikel **offline / lokal**
-- Format artikel: **Markdown**
-- Blog **statis** (HTML + JavaScript)
-- Publish cukup:
-```bash
-  git commit && git push
-```
+Blog statis berbasis Markdown.
+Alur kerjanya: tulis Markdown, lalu jalankan generator untuk menghasilkan HTML statis.
 
 ## Struktur Folder
 
 ```text
-blog-pribadi/
-├── newpost.php            # Script PHP CLI buat artikel baru
+inidekuid.github.io/
+├── config.php             # Konfigurasi identitas situs & generator
+├── newpost.php            # Buat file post Markdown baru
+├── publish.php            # Generate HTML statis + RSS
 ├── templates/
-│   └── post.md            # Template Markdown
+│   ├── post.md            # Template sumber Markdown untuk newpost.php
+│   ├── site-layout.html   # Template layout utama HTML
+│   ├── index-body.html    # Template body halaman index
+│   ├── index-item.html    # Template kartu item post di index
+│   └── post-body.html     # Template body halaman artikel
 ├── posts/
-│   ├── posts.json         # Daftar semua artikel (WAJIB)
-│   └── *.md               # File artikel
-├── index.html             # Halaman daftar artikel
-├── post.html              # Halaman detail artikel
-└── assets/                # CSS & JS
+│   ├── posts.json         # Metadata semua artikel
+│   ├── *.md               # Sumber konten
+│   └── *.html             # Output halaman post hasil generate
+├── index.html             # Output halaman daftar post hasil generate
+├── assets/
+│   ├── css/style.css
+│   └── js/app.js          # Pencarian lokal di index
+└── rss.xml
 ```
 
-⚠️ **Jangan menghapus `posts/posts.json`**
-Semua artikel harus terdaftar di file ini.
+## Cara Pakai
 
----
-
-## Membuat Artikel Baru
-
-### Buat post
+1. Buat post baru:
 
 ```bash
 php newpost.php "Judul Artikel"
 ```
 
-Hasil:
+2. Edit isi Markdown di `posts/<slug>.md`.
 
-* File baru: `posts/judul-artikel.md`
-* Metadata otomatis ditambahkan ke `posts.json`
-
-
-### 2️⃣ Edit isi artikel
+3. Generate ulang situs:
 
 ```bash
-nano posts/judul-artikel.md
+php publish.php
 ```
 
-Atau editor favorit Anda.
+Perintah ini akan menghasilkan ulang:
+- `index.html`
+- `posts/*.html`
+- `rss.xml`
 
-
-### Publish
+4. Commit dan push:
 
 ```bash
 git add .
-git commit -m "Post: Judul Artikel"
+git commit -m "Publish blog"
 git push
 ```
 
-Selesai 🚀
+## Konfigurasi Situs
 
+Edit file `config.php` untuk mengubah identitas situs:
 
+- `site_title`
+- `site_description`
+- `site_tagline`
+- `footer_text`
+- `site_url`
+- `lang`
+- `rss_path`
+- `rss_limit`
+- `default_category`
 
-## Format Dasar Markdown
+Catatan: untuk RSS yang valid, isi `site_url` dengan URL penuh situs (contoh: `https://inidekuid.github.io`).
 
-### Judul
+## Metadata di Markdown
+
+Anda bisa isi metadata di komentar HTML paling atas:
 
 ```md
-# Judul Artikel
+<!--
+tags: linux, nginx, debian
+category: Catatan
+-->
 ```
 
-### Sub Judul
+Jika metadata kosong, nilai dari `posts.json` akan dipakai.
 
-```md
-## Sub Judul
-```
-
-## Format Kode (PENTING)
-
-### Inline Code
-
-Untuk perintah, fungsi, atau nama file:
-
-Gunakan `git push` untuk upload.
-
-
-### Code Block (Multi Baris)
-
-
-```bash
-git add .
-git commit -m "Pesan commit"
-```
-
-### Code Block + Bahasa (Disarankan)
-
-```php
-<?php
-echo "Hello World";
-```
-
-Bahasa yang umum:
-- `php`
-- `js`
-- `html`
-- `css`
-- `bash`
-- `json`
-- `sql`
-
-
-## Aturan Penulisan yang Disarankan
-- Satu artikel = satu topik
-- Gunakan heading (`##`) untuk tiap bagian
-- Pisahkan teks & kode
-- Jangan taruh kode panjang dalam paragraf
-- Gunakan bullet list untuk langkah-langkah
-
-
-## Metadata Artikel
-
-Contoh entry di `posts/posts.json`:
-```json
-{
-  "title": "Judul Artikel",
-  "slug": "judul-artikel",
-  "date": "2026-02-18",
-  "category": "Catatan",
-  "tags": ["git", "linux"],
-  "excerpt": "Ringkasan singkat artikel.",
-  "file": "judul-artikel.md"
-}
-```
-
-Aturan:
-
-* `date` → format `YYYY-MM-DD`
-* `excerpt` → 1–2 kalimat
-* `tags` → huruf kecil, singkat
-
-
-## Urutan Artikel
-
-* Artikel otomatis diurutkan **terbaru → terlama**
-* Pastikan `date` benar
-* Tidak perlu mengatur manual di HTML
-
-
-## Preview di Lokal
-
-Gunakan server lokal:
+## Preview Lokal
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Buka di browser:
-
-```bash
-http://localhost:8000
-```
-
-Jangan buka via `file://`.
-
-
-## ❌ Kesalahan Umum (Hindari)
-
-* Mengedit `posts.json` sembarangan
-* Lupa `git add`
-* Salah format tanggal
-* Menulis kode tanpa triple backtick
-* Preview tanpa server lokal
-
-
-## Checklist Sebelum Publish
-
-* [ ] Artikel sudah dibaca ulang
-* [ ] Code block rapi
-* [ ] Tidak ada typo fatal
-* [ ] Preview lokal OK
-* [ ] `git status` bersih
-
+Buka `http://localhost:8000`.

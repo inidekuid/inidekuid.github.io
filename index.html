@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog Pakto</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="alternate" type="application/rss+xml" href="rss.xml">
-
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
 </head>
+<body>
+  <header class="site-header">
+    <h1><a href="/index.html">Blog Pakto</a></h1>
+    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
+  </header>
+  <input id="search" class="search" type="search" placeholder="Cari artikel...">
+<main id="posts" class="post-list">
+<article class="post-item" data-search="clear opcache catatan, networking php pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena pernah tidak kita sudah melakukan updat...">
+  <h2><a href="/posts/clear-opcache.html">Clear OPCACHE</a></h2>
+  <div class="post-meta">2026-02-23 · Catatan, Networking</div>
+  <p class="post-excerpt">Pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena Pernah tidak kita sudah melakukan updat...</p>
+</article>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<article class="post-item" data-search="instalasi nginx di debian xx catatan web server nginx debian tanggal: 20260219 instalasi nginx di debian sangat mudah melalui repository resmi menggunakan perintah sudo apt update &amp;&amp; sudo apt install n...">
+  <h2><a href="/posts/instalasi-nginx-di-debian-xx.html">Instalasi Nginx di Debian xx</a></h2>
+  <div class="post-meta">2026-02-19 · Catatan</div>
+  <p class="post-excerpt">Tanggal: 20260219 Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah sudo apt update &amp;&amp; sudo apt install n...</p>
+</article>
 
-  <div class="max-w-3xl mx-auto px-4 py-8">
+<article class="post-item" data-search="instalasi php untuk nginx di debian catatan debian web server sekarang kita lanjut buat catatan instalasi php untuk nginx di debian, dengan menginstal phpfpm (fastcgi process manager) agar nginx dapat m...">
+  <h2><a href="/posts/instalasi-php-untuk-nginx-di-debian.html">Instalasi PHP untuk Nginx di Debian</a></h2>
+  <div class="post-meta">2026-02-19 · catatan</div>
+  <p class="post-excerpt">Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal phpfpm (FastCGI Process Manager) agar Nginx dapat m...</p>
+</article>
 
-    <!-- Header -->
-    <header class="mb-10">
-      <a href="index.html" class="text-2xl md:text-3xl font-bold">Blog Pakto</a>
-      <p class="text-gray-600 mt-1 text-sm md:text-base">
-        Catatan, pembelajaran, dan eksperimen
-      </p>
-    </header>
-    <!-- Tag Filter -->
-    <div id="tag-filter" class="flex flex-wrap gap-2 mb-6">
-    </div>
+<article class="post-item" data-search="warning: remote host identification has changed catatan ssh security network tanggal: 20260218 kemarin setelah melakukan reset host key ssh, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatka...">
+  <h2><a href="/posts/warning-remote-host-identification-has-changed.html">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</a></h2>
+  <div class="post-meta">2026-02-18 · Catatan</div>
+  <p class="post-excerpt">Tanggal: 20260218 Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatka...</p>
+</article>
 
+<article class="post-item" data-search="hello semuanya catatan intro blog markdown ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t...">
+  <h2><a href="/posts/hello-world.html">Hello Semuanya</a></h2>
+  <div class="post-meta">2026-02-17 · Catatan</div>
+  <p class="post-excerpt">Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t...</p>
+</article>
 
-    <!-- Search -->
-    <input id="search" type="search" placeholder="Cari artikel..."
-      class="w-full mb-8 px-4 py-2 border rounded-lg focus:outline-none focus:ring">
+</main>
+<script src="/assets/js/app.js"></script>
 
-    <!-- List -->
-    <main id="posts" class="space-y-8"></main>
-
-    <!-- Footer -->
-    <footer class="mt-16 text-sm text-gray-500 text-center">
-      © 2026 Blog Pakto. All rights reserved.
-    </footer>
-
-  </div>
-
-  <script src="assets/js/app.js"></script>
+  <footer class="site-footer">
+    © 2026 Blog Pakto. All rights reserved.
+  </footer>
 </body>
-
 </html>

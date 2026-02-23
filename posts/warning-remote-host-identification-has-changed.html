@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/index.html">Blog Pakto</a></h1>
+    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
+  </header>
+  <article>
+  <p><a href="/index.html">← Kembali</a></p>
+  <h2>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</h2>
+  <p class="post-meta">2026-02-18 · Catatan · tags: SSH, security, network</p>
+  <div class="post-content">
+<h1>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</h1>
+<p>_Tanggal: 2026-02-18_</p>
+<p>---</p>
+<p>Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatkan pesan error &quot;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED&quot;. maka yang saya lakukan dengan komputer saya yaitu dengan menghapus entri key lama di komputer dengan perintah:</p>
+<pre><code class="language-bash">
+ssh-keygen -R [IP_ATAU_HOSTNAME_SERVER]
+</code></pre>
+<p>kemudian ulangi lagi untuk remote ssh.</p>
+<p>&gt;catatan: Kondisinya saya menggunakan linux debian, untuk windows berbeda lagi ya caranya, tapi kalau pakai putty aman ndak perlu reset-reset CMIIW</p>
+<p>Good luck.</p>
+  </div>
+</article>
+
+  <footer class="site-footer">
+    © 2026 Blog Pakto. All rights reserved.
+  </footer>
+</body>
+</html>

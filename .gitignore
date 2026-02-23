@@ -1,2 +1,3 @@
 publish.php
 newpost.php
+posts/**/*.md

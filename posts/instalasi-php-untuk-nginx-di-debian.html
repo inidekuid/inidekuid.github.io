@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instalasi PHP untuk Nginx di Debian</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/index.html">Blog Pakto</a></h1>
+    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
+  </header>
+  <article>
+  <p><a href="/index.html">← Kembali</a></p>
+  <h2>Instalasi PHP untuk Nginx di Debian</h2>
+  <p class="post-meta">2026-02-19 · catatan · tags: debian, web server</p>
+  <div class="post-content">
+<h1>Instalasi PHP untuk Nginx di Debian</h1>
+<p>Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal php-fpm (FastCGI Process Manager) agar Nginx dapat memproses file PHP untuk apache sedikit beda. Perintah utamanya adalah <code>sudo apt install php-fpm php-mysql</code>, diikuti dengan konfigurasi Nginx pada blok server untuk mengarahkan file .php ke socket PHP-FPM, lalu memuat ulang layanan.</p>
+<h2>Langkah-langkah Install PHP-FPM di Debian (Contoh PHP 8.2/8.3):</h2>
+<ol>
+<li>Update repo dahulu</li>
+</ol>
+<pre><code class="language-bash">
+sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre>
+<ol>
+<li>Instal PHP-FPM dan Modul Umum</li>
+<p>Instal versi yang diinginkan (misalnya 8.2 atau yang terbaru, namun disini anda bisa sesuaikan dengan versi Debian yang Anda gunakan) disini saya menggunakan debian 12:</p>
+</ol>
+<pre><code class="language-bash">
+sudo apt install php8.2-fpm php8.2-mysql php8.2-curl php8.2-gd php8.2-mbstring php8.2-xml php8.2-zip -y
+
+</code></pre>
+<p>biar ga salah bisa dicopy paste perintahnya.</p>
+<ol>
+<li>Verifikasi Layanan PHP-FPM</li>
+<p>Disini kita pastikan layanan PHPnya sudah jalan atau belum, perintah ceknya:</p>
+</ol>
+<pre><code class="language-bash">
+sudo systemctl status php8.2-fpm  
+php -version
+
+ ```
+
+4. Konfigurasi Nginx untuk PHP
+jika dipastikan sudah berjalan layanan/service dari php fpmnya kita bisa lanjut konfigurasi Nginx defaulnya ada folder `/etc/nginx/sites-available/default`.
+</code></pre>
+<p>sudo nano /etc/nginx/sites-available/default</p>
+<pre><code>
+
+ubah konfigurasinya seperti ini:
+</code></pre>
+<p>server { listen 80; server_name domain_anda.com; root /var/www/html; index index.php index.html;</p>
+<p>location / { try_files $uri $uri/ =404; }</p>
+<h1>Lokasi pemrosesan PHP</h1>
+<p>location ~ \.php$ { include snippets/fastcgi-php.conf; fastcgi_pass unix:/var/run/php/php8.2-fpm.sock; } }</p>
+<pre><code>
+gunakan code editor yang anda su
+
+5. Restart layanan/service nginx
+
+</code></pre>
+<p>sudo nginx -t                # Test konfigurasi sudo systemctl restart nginx # Restart jika OK</p>
+<pre><code>
+6. Uji PHP
+Buat file info.php di `/var/www/html/` dan isi dengan `&lt;?php phpinfo(); ?&gt;`, lalu akses melalui browser chrome atau browser lynx terminal. 
+
+Good luck
+
+</code></pre>
+  </div>
+</article>
+
+  <footer class="site-footer">
+    © 2026 Blog Pakto. All rights reserved.
+  </footer>
+</body>
+</html>

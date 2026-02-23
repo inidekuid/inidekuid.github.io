@@ -1,16 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Blog Pribadi</title>
-  <link>https://username.github.io/blog-pribadi/</link>
-  <description>Catatan dan pembelajaran</description>
-
+  <title>Blog Pakto</title>
+  <link>https://inidekuid.github.io/</link>
+  <description>Catatan, pembelajaran, dan eksperimen</description>
+  <language>id</language>
+  <atom:link href="https://inidekuid.github.io/rss.xml" rel="self" type="application/rss+xml" />
   <item>
-    <title>Hello World</title>
-    <link>https://username.github.io/blog-pribadi/post.html?slug=hello-world</link>
-    <pubDate>Tue, 18 Feb 2026 00:00:00 GMT</pubDate>
-    <description>Artikel pertama blog pribadi</description>
+    <title>Clear OPCACHE</title>
+    <link>https://inidekuid.github.io/posts/clear-opcache.html</link>
+    <guid isPermaLink="true">https://inidekuid.github.io/posts/clear-opcache.html</guid>
+    <pubDate>Mon, 23 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena Pernah tidak kita sudah melakukan updat...</description>
   </item>
-
+  <item>
+    <title>Instalasi Nginx di Debian xx</title>
+    <link>https://inidekuid.github.io/posts/instalasi-nginx-di-debian-xx.html</link>
+    <guid isPermaLink="true">https://inidekuid.github.io/posts/instalasi-nginx-di-debian-xx.html</guid>
+    <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Tanggal: 20260219 Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah sudo apt update &amp;&amp; sudo apt install n...</description>
+  </item>
+  <item>
+    <title>Instalasi PHP untuk Nginx di Debian</title>
+    <link>https://inidekuid.github.io/posts/instalasi-php-untuk-nginx-di-debian.html</link>
+    <guid isPermaLink="true">https://inidekuid.github.io/posts/instalasi-php-untuk-nginx-di-debian.html</guid>
+    <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Sekarang kita lanjut buat catatan Instalasi PHP untuk Nginx di Debian, dengan menginstal phpfpm (FastCGI Process Manager) agar Nginx dapat m...</description>
+  </item>
+  <item>
+    <title>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED</title>
+    <link>https://inidekuid.github.io/posts/warning-remote-host-identification-has-changed.html</link>
+    <guid isPermaLink="true">https://inidekuid.github.io/posts/warning-remote-host-identification-has-changed.html</guid>
+    <pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Tanggal: 20260218 Kemarin Setelah melakukan reset Host Key SSH, kemudian komputer klien yang saya gunakan mencoba terhubung ulang mendapatka...</description>
+  </item>
+  <item>
+    <title>Hello Semuanya</title>
+    <link>https://inidekuid.github.io/posts/hello-world.html</link>
+    <guid isPermaLink="true">https://inidekuid.github.io/posts/hello-world.html</guid>
+    <pubDate>Tue, 17 Feb 2026 00:00:00 GMT</pubDate>
+    <description>Ini adalah di blog pribadi saya, blog ini akan berisi catatan dan kegiatan saya dalam belajar, menjadi pengajar, eksperimen, atau kegiatan t...</description>
+  </item>
 </channel>
 </rss>

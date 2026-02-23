@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clear OPCACHE</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/index.html">Blog Pakto</a></h1>
+    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
+  </header>
+  <article>
+  <p><a href="/index.html">← Kembali</a></p>
+  <h2>Clear OPCACHE</h2>
+  <p class="post-meta">2026-02-23 · Catatan, Networking · tags: php</p>
+  <div class="post-content">
+<h1>Clear OPCACHE?</h1>
+<p>Pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena</p>
+<h2>Pendahuluan</h2>
+<p>Pernah tidak kita sudah melakukan update aplikasi tetapi tidak berubah tampilannya? bisa jadi karena cache php atau kita mengaktifkan opcache dimana tujuannya &quot;meningkatkan performa dan kecepatan eksekusi skrip PHP dengan menyimpan bytecode hasil kompilasi dalam memori bersama (shared memory)&quot; begitu sih yang saya tau. tapi kadang menyebalkan kalau saat demo eh ternyata ndak berubah. maka sepengetahuan saya bisanya reset manual (saat ini artikel ditulis) dari baca artikel php.net kodenya kurang lebih seperti ini.</p>
+<h2>Contoh Kode</h2>
+<p>misalkan simpan dengan nama file <code>bersihkan-cacheop.php</code></p>
+<pre><code class="language-php">
+&lt;?php
+if (function_exists(&#039;opcache_reset&#039;)) {
+    opcache_reset();
+    echo &quot;OPcache cleared successfully.&quot;;
+} else {
+    echo &quot;OPcache is not enabled.&quot;;
+}
+?&gt;
+
+</code></pre>
+  </div>
+</article>
+
+  <footer class="site-footer">
+    © 2026 Blog Pakto. All rights reserved.
+  </footer>
+</body>
+</html>

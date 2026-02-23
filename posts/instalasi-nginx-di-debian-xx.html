@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instalasi Nginx di Debian xx</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/index.html">Blog Pakto</a></h1>
+    <p class="tagline">Catatan, pembelajaran, dan eksperimen</p>
+  </header>
+  <article>
+  <p><a href="/index.html">← Kembali</a></p>
+  <h2>Instalasi Nginx di Debian xx</h2>
+  <p class="post-meta">2026-02-19 · Catatan · tags: web server, nginx, debian</p>
+  <div class="post-content">
+<h1>Instalasi Nginx di Debian xx</h1>
+<p>_Tanggal: 2026-02-19_</p>
+<p>---</p>
+<p>Instalasi Nginx di Debian sangat mudah melalui repository resmi menggunakan perintah <code>sudo apt update &amp;&amp; sudo apt install nginx -y</code>. Setelah instalasi, pastikan Nginx berjalan dengan <code>systemctl status nginx</code> dan sesuaikan firewall (UFW) untuk mengizinkan lalu lintas <code>HTTP/HTTPS</code>. File konfigurasi utama berada di <code>/etc/nginx</code>, sementara berkas situs disimpan di <code>/var/www/html</code>.</p>
+<p>Berikut adalah panduan lengkap instalasi Nginx di Debian:</p>
+<ol>
+<li>Update Repositori Sistem</li>
+<p>Pastikan repositori sistem Anda diperbarui ke versi terbaru untuk menghindari konflik paket.</p>
+</ol>
+<pre><code class="language-bash">
+sudo apt update &amp;&amp; sudo apt upgrade -y
+</code></pre>
+<ol>
+<li>Instalasi Nginx</li>
+<p>Instal paket Nginx menggunakan manajer paket APT.</p>
+</ol>
+<pre><code class="language-bash">
+sudo apt install nginx -y
+</code></pre>
+<ol>
+<li>Konfigurasi Firewall (UFW)</li>
+<p>Jika Anda mengaktifkan UFW, pastikan untuk mengizinkan Nginx (port 80 untuk HTTP dan 443 untuk HTTPS).</p>
+</ol>
+<pre><code class="language-bash">
+sudo ufw allow &#039;Nginx Full&#039;
+</code></pre>
+<ol>
+<li>Verifikasi Instalasi</li>
+<p>Periksa apakah layanan Nginx sudah berjalan dengan benar.</p>
+</ol>
+<pre><code class="language-bash">
+systemctl status nginx
+</code></pre>
+<p>Atau anda bisa buka browser dan akses alamat IP server Anda (misal: http://localhost atau http://192.168.x.x). jika berhasil maka akan muncul halaman sambutan &quot;Welcome to nginx&quot;.</p>
+<p>Good luck</p>
+  </div>
+</article>
+
+  <footer class="site-footer">
+    © 2026 Blog Pakto. All rights reserved.
+  </footer>
+</body>
+</html>
